@@ -119,11 +119,11 @@
             others && values.splice(len) && (values[cut].others = true);
 
             for (i = 0; i < len; i++) {
-                var mangle = angle - 360 * values[i] / total / 2;
+                var manglePartial = 360 * values[i] / total / 2,
+                    mangle = (opts.startAngle) ? angle + manglePartial : angle - manglePartial;
 
-                if (!i) {
+                if (!opts.startAngle && !i) {
                     angle = 90 - mangle;
-                    mangle = angle - 360 * values[i] / total / 2;
                 }
 
                 if (opts.init) {
