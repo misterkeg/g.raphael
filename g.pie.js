@@ -43,7 +43,7 @@
  
 (function () {
 
-    function Piechart(paper, cx, cy, r, values, opts) {
+    function Piechart(paper, cx, cy, r, vals, opts) {
         opts = opts || {};
 
         var chartinst = this,
@@ -52,6 +52,7 @@
             chart = paper.set(),
             series = paper.set(),
             order = [],
+            values = vals.slice(),
             len = values.length,
             angle = 0,
             total = 0,
